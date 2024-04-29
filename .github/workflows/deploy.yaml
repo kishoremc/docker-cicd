@@ -39,7 +39,7 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         script: |
           aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.ap-south-1.amazonaws.com
-          sudo docker pull ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.ap-south-1.amazonaws.com/docker-cicd:latest
-          sudo docker stop docker-cicd || true
-          sudo docker rm docker-cicd || true
-          sudo docker run -d --name docker-cicd -p 3005:3000 ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.ap-south-1.amazonaws.com/docker-cicd:latest
+          docker pull ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.ap-south-1.amazonaws.com/docker-cicd:latest
+          docker stop docker-cicd || true
+          docker rm docker-cicd || true
+          docker run -d --name docker-cicd -p 3005:3000 ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.ap-south-1.amazonaws.com/docker-cicd:latest
