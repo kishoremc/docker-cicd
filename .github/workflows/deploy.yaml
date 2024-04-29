@@ -25,7 +25,7 @@ jobs:
     - name: Build Docker image
       run: docker build -t docker-cicd -f ./docker/Dockerfile.user .
 
-    - name: Tag Docker image # test 1
+    - name: Tag Docker image # test 21
       run: docker tag docker-cicd:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.ap-south-1.amazonaws.com/docker-cicd:latest
 
     - name: Push Docker image to ECR
