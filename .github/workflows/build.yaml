@@ -1,6 +1,6 @@
 name: Build and push to Docker Hub
 on:
-  push:           # we are telling that if any time some one pushes code,please perform the below steps.
+  #push:           # we are telling that if any time some one pushes code,please perform the below steps.
     branches:
       - "**"
 
